@@ -11,8 +11,8 @@ import io.cucumber.testng.CucumberOptions;
 				"html:target//Reports//HtmlReport.html",
 //				"json:target//Reports//JsonReport.html",
 //				"usage:target//Reports//UsageReport",
-//				"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
-				"rerun:target//failedScenarios.txt"
+				"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
+				//"rerun:target//failedScenarios.txt"
 		}
 		)
 public class GooglePageRunner extends AbstractTestNGCucumberTests {

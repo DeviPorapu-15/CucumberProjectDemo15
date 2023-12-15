@@ -10,6 +10,6 @@ import io.cucumber.testng.CucumberOptions;
 		plugin= {"pretty",
 				"html:target//Reports//HtmlReport.html",
 				})
-public class rerunner extends AbstractTestNGCucumberTests{
+public class Rerunner extends AbstractTestNGCucumberTests{
 
 }

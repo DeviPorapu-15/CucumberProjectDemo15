@@ -10,10 +10,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 
-import com.aventstack.extentreports.gherkin.model.Scenario;
+
 
 import io.cucumber.java.After;
-
+import io.cucumber.java.Scenario;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -33,11 +33,11 @@ public class GooglePageStepDef {
 		searchbox.sendKeys("JavaTutorial");
 		searchbox.submit();
 	}
-    @Then("Should Display Java Result Page")
+    @Then("Should display Java Result Page")
     public void should_display_java_result_page() {
-    	Assert.assertEquals(driver.getTitle(), "Java Tutorial - Google Search");
+    	Assert.assertEquals(driver.getTitle(), "JavaTutorial - Google Search");
     } 	
-    @When("User search Selenium Tutorial")
+    @When("user search Selenium Tutorial")
     public void user_search_selenium_tutorial() {
     	WebElement searchbox = driver.findElement(By.className("gLFyf"));
 		searchbox.sendKeys("SeleniumTutorial");
@@ -48,15 +48,16 @@ public class GooglePageStepDef {
     	Assert.assertEquals(driver.getTitle(), "Selenium Tutorial - Google Search");
     }
    
-//    @After
-//    public void attachScreenshot(Scenario scenario) {
-//    	if(scenario.isFailed()) {
-//    		TakesScreenshot screen = (TakesScreenShot)driver;
-//    		byte[] img = screen.getScreenshotAs(OutputType.BYTES);
-//    		scenario.attach(img,"img/png","ScreenshotImage");
-//    	}
+    @After
+    public void attachScreenshot(Scenario scenario) {
+    	if(scenario.isFailed()) {
+    		TakesScreenshot screen = (TakesScreenshot)driver;
+    		byte[] img = screen.getScreenshotAs(OutputType.BYTES);
+    		scenario.attach(img,"image/png","ScreenshotImage");
+    	}
     	
     }
+}
     	
     	
     
