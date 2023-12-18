@@ -4,14 +4,14 @@ import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(
-		features="src//test//resources//features//GoogleSearch.feature",
+		features="src//test//resources//features//UserLogin.feature",
 		glue = {"stepDefs"},
 		monochrome=true,
 		plugin= {"pretty",
 				"html:target//Reports//HtmlReport.html",
 //				"json:target//Reports//JsonReport.html",
 //				"usage:target//Reports//UsageReport",
-				"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
+				//"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
 				//"rerun:target//failedScenarios.txt"
 		}
 		)
