@@ -10,19 +10,52 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 
 public class CRMStepDef {
+	
+//	@Before(order=2)
+//	public void initDB() {
+//		System.out.println("Init DB.....");
+//	}
+//	@Before(order=3)
+//	public void readProperty() {
+//		System.out.println("Read from property");
+//	}
+//	 
+//	@Before(order=2)
+//	public void initBrowser() {
+//		System.out.println("Init Browser.....");
+//	}
+	@Before(value="@SmokeTest" ,order=1)
+	public void readfromSmokeTestProperty() {
+		System.out.println("Read from Smoke Test Property.....");
+	}
+	@Before(value="@SmokeTest",order=2)
+	public void initChrome() {
+		System.out.println("Init Chrome");
+	}
+	 
+	@Before(value="@RegressionTest" ,order=1)
+	public void readRegTestProperty() {
+		System.out.println("Read from Regression Test Property.....");
+	}
+	@Before(value="@RegressionTest" ,order=2)
+	public void initedge() {
+		System.out.println("Init edge.....");
+	}
+	
+	
 	//@Before 
 	//@Before Step
 	//@BeforeAll
-	@Before("@SmokeTest")
-	public static void initChrome()
-	{
-	 System.out.println("Init Chrome.......");	
-	}
-	@Before("@RegressionTest")
-	public static void initEdge()
-	{
-	 System.out.println("Init Edge.......");	
-	}
+//	@Before("@SmokeTest")
+//	public static void initChrome()
+//	{
+//	 System.out.println("Init Chrome.......");	
+//	}
+//	@Before("@RegressionTest")
+//	public static void initEdge()
+//	{
+//	 System.out.println("Init Edge.......");	
+//	}
 	//@After
 	//@AfterStep
 	//@AfterAll
